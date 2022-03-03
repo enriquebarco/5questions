@@ -1,5 +1,7 @@
 'use strict'
 
+const AnswerController = require('../app/Controllers/Http/AnswerController');
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -16,4 +18,4 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('index')
+Route.get('/', 'AnswerController.home');

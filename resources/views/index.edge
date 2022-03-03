@@ -15,13 +15,15 @@
       <h3>Answer 4</h3>
       <h3>Answer 5</h3>
     </div>
+    @each(answer in answers)
     <div class="dashboard__table-body">
-      <h4 class="dashboard_table-body-text">Future ID</h4>
-      <h4 class="dashboard_table-body-text">Future Answer 1</h4>
-      <h4 class="dashboard_table-body-text">Future Answer 2</h4>
-      <h4 class="dashboard_table-body-text">Future Answer 3</h4>
-      <h4 class="dashboard_table-body-text">Future Answer 4</h4>
-      <h4 class="dashboard_table-body-text">Future Answer 5</h4>
+      <h4 class="dashboard_table-body-text">{{answer.id}}</h4>
+      <h4 class="dashboard_table-body-text">{{answer.answer1}}</h4>
+      <h4 class="dashboard_table-body-text">{{answer.answer2}}</h4>
+      <h4 class="dashboard_table-body-text">{{answer.answer3}}</h4>
+      <h4 class="dashboard_table-body-text">{{answer.answer4}}</h4>
+      <h4 class="dashboard_table-body-text">{{answer.answer5}}</h4>
     </div>
+    @endeach
   </div>
 @endsection
