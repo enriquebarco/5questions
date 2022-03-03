@@ -16,12 +16,22 @@
     
             {{ csrfField() }}
     
-              <label for="email" class="form__label">Email</label>
-              <input type="email" class="form__input" name="email" value="{{ old('email', '') }}">
-              <label for="password" class="form__label">Password</label>
-              <input type="password" class="form__input" name="password" value="{{ old('email', '') }}">
-              <button class="form__button" tyoe="submit">Sign Up</button>
-          </form>
-      </div>
+            <label for="email" class="form__label">Email</label>
+            <input type="email" class="form__input" name="email" value="{{ old('email', '') }}">
+                @if(hasErrorFor('email'))
+                    <span class="form__error">
+                        {{ getErrorFor('email') }}
+                    </span>
+                @endif
+            <label for="password" class="form__label">Password</label>
+            <input type="password" class="form__input" name="password" value="{{ old('password', '') }}">
+            @if(hasErrorFor('password'))
+                    <span class="form__error">
+                        {{ getErrorFor('password') }}
+                    </span>
+                @endif
+            <button class="form__button" tyoe="submit">Sign Up</button>
+        </form>
+    </div>
 </div>
 @endsection

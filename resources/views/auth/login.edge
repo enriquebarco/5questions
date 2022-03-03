@@ -1,0 +1,40 @@
+@layout('layouts.main')
+
+@section('title')
+5Questions - Log In
+@endsection
+
+@section('extracss')
+{{ style('forms') }}
+@endsection
+
+@section('content')
+<div class="form-page__container">
+    <div class="form__container">
+        <h1 class="form__title">Log In</h1>
+        <form action="{{ route('UserController.login') }}" method="POST" class="form">
+            
+            {{ csrfField() }}
+            
+            <label for="email" class="form__label">Email</label>
+            <input type="email" class="form__input" name="email" value="{{ old('email', '') }}">
+            @if(hasErrorFor('email'))
+            <span class="form__error">
+                {{ getErrorFor('email') }}
+            </span>
+            @endif
+            <label for="password" class="form__label">Password</label>
+            <input type="password" class="form__input" name="password" value="{{ old('password', '') }}">
+            @if(hasErrorFor('password'))
+            <span class="form__error">
+                {{ getErrorFor('password') }}
+            </span>
+            @endif
+            @if(flashMessage('loginError'))
+                <span class="form__error">{{ flashMessage('loginError') }}</span>
+            @endif
+            <button class="form__button" tyoe="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+@endsection

@@ -1,5 +1,6 @@
 'use strict'
 
+const { route } = require('@adonisjs/framework/src/Route/Manager');
 const AnswerController = require('../app/Controllers/Http/AnswerController');
 
 /*
@@ -18,7 +19,19 @@ const AnswerController = require('../app/Controllers/Http/AnswerController');
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+// answers routes
 Route.get('/', 'AnswerController.home');
 
+//user signup
 Route.on('/signup').render('auth.signup');
+Route.post('/', 'UserController.create').validator('CreateUser');
+
+//user login
 Route.on('/login').render('auth.login');
+Route.post('/login','UserController.login').validator('LoginUser');
+
+//user logout
+Route.get('/logout', async({ auth, response }) => {
+    await auth.logout()
+    return response.redirect('/')
+})
