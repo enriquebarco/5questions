@@ -12,7 +12,7 @@ class AnswerController {
 
     }
 
-    async create({ request, response, session }) {
+    async create({ request, response }) {
 
         const answer = new Answer;
         console.log(response)
@@ -25,7 +25,7 @@ class AnswerController {
 
             await answer.save();
 
-        return response.redirect('/dashboard');
+        return response.redirect('/success');
     }
 }
 
