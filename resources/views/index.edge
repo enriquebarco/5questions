@@ -4,26 +4,63 @@
 5Questions - Simple Solutions Assesment
 @endsection
 
+@section('extracss')
+{{ style('forms') }}
+@endsection
+
 @section('content')
-  <h1 class="dashboard__title">All Answers</h1>
-  <div class="dashboard__container">
-    <div class="dashboard__table-header">
-      <h3>ID</h3>
-      <h3>Answer 1</h3>
-      <h3>Answer 2</h3>
-      <h3>Answer 3</h3>
-      <h3>Answer 4</h3>
-      <h3>Answer 5</h3>
+<div class="form-page__container">
+    <div class="form__container--questions">
+        <h1 class="form__title">Please Answer The Following Questions</h1>
+        <form action="{{ route('AnswerController.login') }}" method="POST" class="form">
+            
+            {{ csrfField() }}
+            
+            <label for="Q1" class="form__label">Why did the programmer quit his job?</label>
+            <input type="text" class="form__input" name="Q1">
+            @if(hasErrorFor('Q1'))
+            <span class="form__error">
+                {{ getErrorFor('Q1') }}
+            </span>
+            @endif
+
+            <label for="Q2" class="form__label">Do our pets have names for us, too?</label>
+            <input type="text" class="form__input" name="Q2">
+            @if(hasErrorFor('Q2'))
+            <span class="form__error">
+                {{ getErrorFor('Q2') }}
+            </span>
+            @endif
+
+            <label for="Q3" class="form__label">Who is going to win the 2022 World Cup?</label>
+            <input type="text" class="form__input" name="Q3">
+            @if(hasErrorFor('Q3'))
+            <span class="form__error">
+                {{ getErrorFor('Q3') }}
+            </span>
+            @endif
+
+            <label for="Q4" class="form__label">If we expect the unexpected, doesn't the unexpected become expected?</label>
+            <input type="text" class="form__input" name="Q4">
+            @if(hasErrorFor('Q4'))
+            <span class="form__error">
+                {{ getErrorFor('Q4') }}
+            </span>
+            @endif
+
+            <label for="Q5" class="form__label">What would you do if money were no object?</label>
+            <input type="text" class="form__input" name="Q5">
+            @if(hasErrorFor('Q5'))
+            <span class="form__error">
+                {{ getErrorFor('Q5') }}
+            </span>
+            @endif
+            
+            @if(flashMessage('loginError'))
+                <span class="form__error">{{ flashMessage('loginError') }}</span>
+            @endif
+            <button class="form__button--questions" tyoe="submit">Submit</button>
+        </form>
     </div>
-    @each(answer in answers)
-    <div class="dashboard__table-body">
-      <h4 class="dashboard_table-body-text">{{answer.id}}</h4>
-      <h4 class="dashboard_table-body-text">{{answer.answer1}}</h4>
-      <h4 class="dashboard_table-body-text">{{answer.answer2}}</h4>
-      <h4 class="dashboard_table-body-text">{{answer.answer3}}</h4>
-      <h4 class="dashboard_table-body-text">{{answer.answer4}}</h4>
-      <h4 class="dashboard_table-body-text">{{answer.answer5}}</h4>
-    </div>
-    @endeach
-  </div>
+</div>
 @endsection
