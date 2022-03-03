@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  {{ style('style') }}
+    
+@!section('extracss')
+
+  <title>
+    @!section('title')
+  </title>
+
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="header__logo">5Questions</a>
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__item"> <a class="navigation__link" href="/">Questions</a></li>
+            <li class="navigation__item"> <a class="navigation__link" href="/login">Login</a></li>
+            <li class="navigation__item"> <a class="navigation__link" href="/dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="main__container">
+    @!section('content')
+  </div>
+</body>
+</html>
