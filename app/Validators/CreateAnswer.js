@@ -1,16 +1,19 @@
 'use strict'
 
-class LoginUser {
+class CreateAnswer {
   get rules () {
     return {
-      'email': 'required',
-      'password': 'required'
+      'Q1': 'required',
+      'Q2': 'required',
+      'Q3': 'required',
+      'Q4': 'required',
+      'Q5': 'required',
     }
   }
 
   get messages() {
     return {
-      required: '{{ field }} is required',
+      required: '{{ field }} is required'
     }
   }
 
@@ -20,7 +23,7 @@ class LoginUser {
 
       return this.ctx.response.redirect('back');
   }
-  
+
 }
 
-module.exports = LoginUser
+module.exports = CreateAnswer

@@ -14,7 +14,7 @@ class UserController {
         const { email, password } = request.all();
 
         try {
-            await auth.attempt(email.password);
+            await auth.attempt(email, password);
             return response.redirect('/');
         } catch(error) {
             session.flash({ loginError: 'Invalid credentials'});

@@ -19,8 +19,15 @@ const AnswerController = require('../app/Controllers/Http/AnswerController');
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-// answers routes
-Route.get('/', 'AnswerController.home');
+//view questions
+Route.on('/').render('index')
+
+// Post answers
+Route.post('/', 'AnswerController.create').validator('CreateAnswer');
+
+// View all answers
+Route.get('/dashboard', 'AnswerController.home');
+
 
 //user signup
 Route.on('/signup').render('auth.signup');

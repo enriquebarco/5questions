@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+
+@loggedIn
   <h1 class="dashboard__title">All Answers</h1>
   <div class="dashboard__container">
     <div class="dashboard__table-header">
@@ -30,4 +32,8 @@
     </div>
     @endeach
   </div>
+  @else 
+  <h1 class="dashboard__title">Please login to view answers</h1>
+@endloggedIn
 @endsection
+
