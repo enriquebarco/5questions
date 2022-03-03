@@ -19,3 +19,6 @@ const AnswerController = require('../app/Controllers/Http/AnswerController');
 const Route = use('Route')
 
 Route.get('/', 'AnswerController.home');
+
+Route.on('/signup').render('auth.signup');
+Route.on('/login').render('auth.login');

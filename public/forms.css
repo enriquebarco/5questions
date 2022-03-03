@@ -1,0 +1,70 @@
+.form-page__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form__label {
+    margin: .5rem 0rem;
+}
+
+.form__input {
+    margin-bottom: .5rem;
+    border: .0625rem solid rgb(180, 180, 180);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: inherit;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: orange;
+    box-shadow: 0 0 .125rem orange .5rem;
+    border-radius: .25rem;
+}
+
+.form__button {
+    background-color: orange    ;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    cursor: pointer;
+    outline: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 0;
+    transition: box-shadow .2s;
+    margin-top: 1rem;
+    padding: .75rem;
+    font-size: inherit;
+    width: 70%;
+    align-self: center;
+    font-variation-settings: "wght" 700;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    color: white;
+}
+
+.form__button:hover {
+    box-shadow: orange 0 .1875rem .5rem;
+}

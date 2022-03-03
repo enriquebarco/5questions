@@ -1,0 +1,27 @@
+@layout('layouts.main')
+
+@section('title')
+5Questions - Create an Account
+@endsection
+
+@section('extracss')
+{{ style('forms') }}
+@endsection
+
+@section('content')
+<div class="form-page__container">
+    <div class="form__container">
+          <h1 class="form__title">Sign Up</h1>
+          <form action="{{ route('UserController.create') }}" method="POST" class="form">
+    
+            {{ csrfField() }}
+    
+              <label for="email" class="form__label">Email</label>
+              <input type="email" class="form__input" name="email" value="{{ old('email', '') }}">
+              <label for="password" class="form__label">Password</label>
+              <input type="password" class="form__input" name="password" value="{{ old('email', '') }}">
+              <button class="form__button" tyoe="submit">Sign Up</button>
+          </form>
+      </div>
+</div>
+@endsection
