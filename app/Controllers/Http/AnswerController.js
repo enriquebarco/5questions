@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport( {
     service: "Outlook365",
     auth: {
         user: "enriquebarco1@hotmail.com",
-        pass: "SimpleSolutions1"
+        pass: ""
     }
 });
 

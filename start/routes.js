@@ -31,7 +31,7 @@ Route.get('/dashboard', 'AnswerController.home');
 
 //user signup
 Route.on('/signup').render('auth.signup');
-Route.post('/', 'UserController.create').validator('CreateUser');
+Route.post('/signup', 'UserController.create').validator('CreateUser');
 
 //user login
 Route.on('/login').render('auth.login');
